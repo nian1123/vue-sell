@@ -1,12 +1,12 @@
 <template>
-    <div class="products">
-      productsproductsproductsproductsproductsproducts
+    <div class="tab">
+        it me , ratings
     </div>
 </template>
 
 <script type="text/ecmascript-6">
     export default {
-        name: 'products'
+        name: 'tab'
     }
 </script>
 

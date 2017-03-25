@@ -1,6 +1,6 @@
 <template>
     <div class="tab">
-        it me , tabbbbbbbbbbb
+        it me , seller
     </div>
 </template>
 

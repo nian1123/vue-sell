@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div class="container">
     <sellHeader></sellHeader>
-    <div class="tab">
+    <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods"> 商品 </router-link>
       </div>
@@ -28,23 +28,33 @@
   }
 </script>
 
-<style lang="scss" scope>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
+<style lang="scss" rel="stylesheet/scss">
+@import "common/sass/scss";
   .tab {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
     height: 40px;
-    font-size: 28px;
     line-height: 40px;
-    color: rgb(77,85,93);
+    &.border-1px {
+      @include boder_1px(rgba(7,17,27,0.1));
+    }
+
+    .tab-item {
+       /*占用剩余空间 */
+      flex: 1;
+      text-align: center;
+      &>a {
+        display: block;
+        color: rgb(77,85,93);
+        font-size: 28px;
+
+      &.router-link-active {
+         color: $link-color;
+       }
+      }
+    }
+
   }
 </style>

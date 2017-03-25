@@ -1,0 +1,26 @@
+@import "./css-components/reset","./mixin/_variable","./mixin/_mixin";
+.container {
+  font-family: $font-family ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $font-color;
+  a {
+    text-decoration:none;
+  }
+}
+//根据像素的倍数来缩放boder高度
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+  .border-1px {
+    &:after {
+      @include prefixer(transform,scaleY(0.7),webkit moz o spec)
+    }
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2.0),(min-device-pixel-ratio: 2.0) {
+  .border-1px {
+    &:after {
+      @include prefixer(transform,scaleY(0.5),webkit moz o spec)
+    }
+  }
+}

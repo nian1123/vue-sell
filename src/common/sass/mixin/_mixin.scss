@@ -1,0 +1,45 @@
+
+//针对一像素的缩放
+@mixin boder_1px($color) {
+  position: relative;
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid $color;
+  }
+}
+
+//浏览器兼容，添加前缀
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spac: true !default;
+
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit and $prefix-for-webkit ==true {
+      -webkit-#{$property}: $value;
+    }
+    @else if $prefix == mozilla and $prefix-for-mozilla ==true {
+      -moz-#{$property}: $value;
+    }
+    @else if $prefix == microsoft and $prefix-for-microsoft == true {
+      -ms-#{$property}: $value;
+    }
+    @else if $prefix == opera and $prefix-for-opera == true {
+      -o-#{$property}: $value;
+    }
+    @else if $prefix == spac and $prefix-for-spac == true {
+      #{$property}: $value;
+    }
+    @else {
+      @warn "Unrecognized prefix:#{prefix}"
+    }
+  }
+}
+
