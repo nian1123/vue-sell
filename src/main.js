@@ -12,6 +12,7 @@ import seller from 'components/seller/seller'
 
 Vue.use(vueRouter);
 
+
 //定义路由
 const routes = [
   {path:'/goods',component: goods},
@@ -37,3 +38,4 @@ const app = new Vue({
 });
 //引导页为godds页面（初始为第一页面）
 router.push('/goods');
+

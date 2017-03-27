@@ -1,17 +1,19 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ooyk1s');
-  src:  url('fonts/icomoon.eot?ooyk1s#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ooyk1s') format('truetype'),
-    url('fonts/icomoon.woff?ooyk1s') format('woff'),
-    url('fonts/icomoon.svg?ooyk1s#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@mixin iconUrl($iconUrl) {
+  @font-face {
+    font-family: 'sells-icon';
+    src: url($iconUrl + '/fonts/sells-icon.eot?awua66');
+    src: url($iconUrl + '/fonts/sells-icon.eot?awua66#iefix') format('embedded-opentype'),
+    url($iconUrl + '/fonts/sells-icon.ttf?awua66') format('truetype'),
+    url($iconUrl + '/fonts/sells-icon.woff?awua66') format('woff'),
+    url($iconUrl + '/fonts/sells-icon.svg?awua66#sells-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
-[class^="icon-"], [class*=" icon-"] {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'sells-icon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -53,5 +55,8 @@
 }
 .icon-thumb_up:before {
   content: "\e909";
+}
+.icon-mug:before {
+  content: "\e9a2";
 }
 

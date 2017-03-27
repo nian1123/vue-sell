@@ -43,3 +43,9 @@ $prefix-for-spac: true !default;
   }
 }
 
+@mixin baImg($imgUrl) {
+  background-image: url($imgUrl + "@2x.png");
+  @media (-webkit-min-device-pixel-ratio: 3.0),(min-device-pixel-ratio: 3.0) {
+    background-image: url($imgUrl + "@3x.png");
+  }
+}

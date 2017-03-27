@@ -1,15 +1,16 @@
 <template>
-    <div class="tab">
-        it me , seller
+    <div class="seller">
+        seller
     </div>
 </template>
 
 <script type="text/ecmascript-6">
     export default {
-        name: 'tab'
+      name: 'tab',
+
     }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" rel="stylesheet/scss">
 
 </style>

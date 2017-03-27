@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <sellHeader></sellHeader>
+  <div class="container" id="container">
+    <sellHeader :seller="sellerData"></sellHeader>
+    <!--:seller利用的是prop，可參考文檔中的prop-->
     <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods"> 商品 </router-link>
@@ -18,12 +19,23 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import sellHeader from './components/sellheader/sellheader'
 
   export default {
     name: 'app',
     components: {
       sellHeader
+    },
+    data: function(){
+      return {
+          sellerData: {}
+    }
+    },
+    created: function () {
+      axios.get('/api/seller').then((res) => {
+          this.sellerData = res.data.data;
+      })
     }
   }
 </script>
@@ -35,8 +47,8 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 80px;
+    line-height: 80px;
     &.border-1px {
       @include boder_1px(rgba(7,17,27,0.1));
     }

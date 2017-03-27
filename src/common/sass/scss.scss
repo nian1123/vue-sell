@@ -1,12 +1,16 @@
-@import "./css-components/reset","./mixin/_variable","./mixin/_mixin";
+@import "./css-components/reset","./mixin/_variable","./mixin/_mixin","./css-components/icon";
+
 .container {
   font-family: $font-family ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: $font-color;
   a {
     text-decoration:none;
+  }
+  .clearfix{
+    overflow:auto;
+    _height:1%
   }
 }
 //根据像素的倍数来缩放boder高度
