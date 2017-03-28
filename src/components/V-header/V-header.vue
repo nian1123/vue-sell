@@ -1,5 +1,5 @@
 <template>
-    <div class="sellerHeader">
+    <div class="Vheader ">
       <div class="title-wrapper">
           <img class="avatar" width="128" height="128" v-bind:src="seller.avatar">
           <div class="title">
@@ -48,7 +48,7 @@
 <script type="text/ecmascript-6">
   import {getscoreStar} from '../../common/js/common.js'
   export default {
-    name: 'sellHeader',
+    name: 'Vheader',
     data() {
       return {
         showDetail: false,
@@ -81,7 +81,7 @@
 <style lang="scss" rel="stylesheet/scss">
   @import "../../common/sass/scss";
 
-  .sellerHeader {
+  .Vheader {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -89,8 +89,8 @@
     .icon {
       display: inline-block;
       vertical-align: top;
-      width: 24px;
-      height: 24px;
+      width: 12px;
+      height: 12px;
       @include iconUrl('../../common');
       &.decrease {
         @include baImg('./img/decrease_1');
@@ -107,60 +107,60 @@
       &.guarantee {
         @include baImg('./img/guarantee_1');
       }
-      background-size: 24px 24px;
+      background-size: 12px 12px;
       background-repeat: no-repeat;
     }
     color: white;
     .title-wrapper {
       display: flex;
       flex-direction: row;
-      margin-top: 48px;
+      margin-top: 24px;
       .avatar {
-        margin: 0 32px 36px 48px;
-        width: 128px;
-        height: 128px;
+        margin: 0 16px 18px 24px;
+        width: 64px;
+        height: 64px;
       }
       .title {
         width: 100%;
-        margin: 4px 0;
+        margin: 2px 0;
         font-weight: 200;
-        line-height: 24px;
+        line-height: 12px;
         .sel-name {
           .brand {
             display: inline-block;
             vertical-align: top;
-            width: 60px;
-            height: 36px;
+            width: 30px;
+            height: 18px;
             @include baImg('./img/brand');
-            background-size: 60px 36px;
+            background-size: 30px 18px;
             background-repeat: no-repeat;
           }
-          font-size: 32px;
+          font-size: 16px;
           font-weight: bold;
-          line-height: 36px;
+          line-height: 18px;
         }
         .sel-description {
-          margin: 16px 0 20px 0;
-          font-size: 24px;
+          margin: 8px 0 10px 0;
+          font-size: 12px;
         }
         .sel-supports {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          font-size: 20px;
+          font-size: 10px;
 
           .sel-supportNum {
             background-color: rgba(0,0,0,0.2);
-            border-radius: 28px;
-            padding: 14px 16px;
-            font-size: 20px;
+            border-radius: 14px;
+            padding: 7px 8px;
+            font-size: 10px;
             text-align: center;
             .supp-count {
-              margin-right: 4px;
+              margin-right: 2px;
             }
             .icon-keyboard_arrow_right {
               vertical-align: middle;
-              line-height: 24px;
+              line-height: 12px;
 
             }
           }
@@ -170,28 +170,28 @@
     .sell-bulletin {
       position: relative;
       background-color: rgba(7,17,27,0.2);
-      padding: 0 52px 0 24px;
+      padding: 0 26px 0 12px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       .bulletin {
         display: inline-block;
         vertical-align: text-bottom;
-        width: 44px;
-        height: 24px;
+        width: 22px;
+        height: 12px;
         @include baImg('./img/bulletin');
-        background-size: 44px 24px;
+        background-size: 22px 12px;
         background-repeat: no-repeat;
       }
       .bulletin-text {
-        font-size: 20px;
+        font-size: 10px;
         font-weight: 200;
-        line-height: 56px;
+        line-height: 28px;
       }
       .icon-keyboard_arrow_right {
         position: absolute;
-        right: 24px;
-        top: 20px;
+        right: 12px;
+        top: 10px;
       }
     }
     .sellHeadbackground {
@@ -207,7 +207,7 @@
     .sellHeadDetail {
       display: flex;
       flex-direction: column;
-      min-height: 60px;
+      min-height: 30px;
       position: fixed;
       top: 0;
       left: 0;
@@ -220,34 +220,37 @@
       .DetailDescription {
         flex: 1;
         width: auto;
-        padding: 128px 72px 64px;
-        font-size: 24px;
+        padding: 64px 36px 32px;
+        font-size: 12px;
         font-weight: 200;
-        line-height: 48px;
+        line-height: 24px;
         .Detail-name {
-          font-size: 32px;
-          line-height: 32px;
+          font-size: 16px;
+          line-height: 16px;
           font-weight: 700;
-          margin-bottom: 32px;
+          margin-bottom: 16px;
 
         }
         .stars {
           span {
             display: inline-block;
-            width: 48px;
-            height: 48px;
-            line-height: 48px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
             &.fullStar {
               @include baImg('./img/star48_on');
               background-repeat: no-repeat;
+              background-size: 24px 24px ;
             }
             &.halfStar {
               @include baImg('./img/star48_half');
               background-repeat: no-repeat;
+              background-size: 24px 24px ;
             }
             &.empStar {
               @include baImg('./img/star48_off');
               background-repeat: no-repeat;
+              background-size: 24px 24px ;
             }
           }
         }
@@ -255,22 +258,22 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
-          margin: 56px 0 48px 0;
-          font-size: 28px;
-          line-height: 28px;
+          margin: 28px 0 24px 0;
+          font-size: 14px;
+          line-height: 14px;
           font-weight: 700;
           &:before,
           &:after {
             content: ' ';
-            margin-right: 24px;
+            margin-right: 12px;
             display: inline-block;
             flex: 1;
-            height: 14px;
+            height: 7px;
             border-bottom: 2px solid rgba(255,255,255,0.2);
             vertical-align: 50%;
           }
           &:after {
-            margin-left: 24px;
+            margin-left: 12px;
             margin-right: 0;
           }
         }
@@ -278,25 +281,25 @@
           padding-left: 0;
           text-align: left;
           li.supportDetail {
-            margin: 0 24px 24px;
-            line-height: 24px;
+            margin: 0 12px 12px;
+            line-height: 12px;
             .icon {
-              margin-right: 12px;
-              width: 32px;
-              height: 32px;
-              background-size: 32px 32px;
+              margin-right: 6px;
+              width: 16px;
+              height: 16px;
+              background-size: 16px 16px;
               vertical-align: middle;
             }
           }
         }
         .bulletin-detail {
-          margin: 0 32px;
+          margin: 0 16px;
           text-align: left;
         }
       }
       i.icon-close {
-        margin: 0 auto 64px;
-        font-size: 64px;
+        margin: 0 auto 32px;
+        font-size: 32px;
         color: rgba(255,255,255,0.5);
       }
     }
